@@ -1,4 +1,4 @@
 all:
 	g++ -c ./src/*.cpp
-	g++ ./*.o -o application -lsfml-graphics -lsfml-window -lsfml-system
+	g++ ./*.o -o application -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 	./application

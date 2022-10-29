@@ -1,6 +1,6 @@
 #include "entity.hpp"
 
-void Entity::SetTexture(const std::string _path) {
+void Entity::SetTexture(std::string const _path) {
 
     this->texture.loadFromFile(_path);
     this->sprite.setTexture(this->texture);
@@ -14,7 +14,7 @@ void Entity::InitTexture() {
 
 }
 
-void Entity::SetPosition(const sf::Vector2f _target) {
+void Entity::SetPosition(sf::Vector2f const _target) {
 
     this->sprite.setPosition(_target);
         

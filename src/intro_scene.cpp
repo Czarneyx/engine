@@ -9,13 +9,13 @@ void IntroScene::Start() {
 
 }
 
-void IntroScene::Update(const float _dt) {
+void IntroScene::Update(float const _dt) {
 
     // std::cout << "FPS: " << 1/_dt << std::endl;
 
 }
 
-void IntroScene::UpdateEvents(const sf::Event &_event) {
+void IntroScene::UpdateEvents(sf::Event const &_event) {
 
     if(_event.type == sf::Event::KeyPressed)
         if(_event.key.code == sf::Keyboard::Escape) 

@@ -12,7 +12,7 @@ Application::Application(sf::VideoMode _videoMode, std::string _windowName) {
 
 void Application::Initialize() {
 
-    this->window = new sf::RenderWindow(this->videoMode, this->windowName, sf::Style::Resize | sf::Style::Close);
+    this->window = new sf::RenderWindow(this->videoMode, this->windowName, sf::Style::None | sf::Style::Close);
     this->window->setVerticalSyncEnabled(true);
     this->window->setFramerateLimit(60);
 
@@ -21,6 +21,9 @@ void Application::Initialize() {
 void Application::Start() {
 
     this->AddScene(&this->introScene);
+    
+    this->OverloadGui.push_back(&this->performanceScene);
+    this->performanceScene.Start();
 
 }
 
@@ -54,19 +57,26 @@ void Application::Update() {
     if(this->scenes.size() == 0)
         this->Quit();
 
+    for(Scene* scene : this->OverloadGui)
+        if(!scene->quit)
+            scene->Update(this->deltaTime);
+
 }
 
 void Application::UpdateEvents() {
 
-    sf::Event _event;
-    while(this->window->pollEvent(_event)) {
+    sf::Event event;
+    while(this->window->pollEvent(event)) {
 
-        if(_event.type == sf::Event::Closed)
+        if(event.type == sf::Event::Closed)
             this->Quit();
 
         if(this->scenes.size() > 0)
-            this->scenes.top()->UpdateEvents(_event);
+            this->scenes.top()->UpdateEvents(event);
 
+        for(Scene* scene : this->OverloadGui)
+            scene->UpdateEvents(event);
+    
     }
 
 }
@@ -74,8 +84,14 @@ void Application::UpdateEvents() {
 void Application::Render() {
 
     this->window->clear();
+
     if(this->scenes.size() > 0)
         this->scenes.top()->Render(this->window);
+
+    for(Scene* scene : this->OverloadGui)
+        if(!scene->quit)
+            scene->Render(this->window);
+
     this->window->display();
 
 }

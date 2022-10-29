@@ -1,11 +1,13 @@
+#pragma once
+
 #include "scene.hpp"
 
 class IntroScene : public Scene {
 
 public:
     void Start();
-    void Update(const float);
-    void UpdateEvents(const sf::Event&);
+    void Update(float const);
+    void UpdateEvents(sf::Event const&);
     void Render(sf::RenderWindow*);
 
 private:

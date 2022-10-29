@@ -5,8 +5,8 @@
 class Entity {
 
 public:
-    void SetTexture(const std::string);
-    void SetPosition(const sf::Vector2f);
+    void SetTexture(std::string const);
+    void SetPosition(sf::Vector2f const);
     void Render(sf::RenderWindow*);
 
 private:
