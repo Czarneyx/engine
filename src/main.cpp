@@ -2,7 +2,7 @@
 
 int main() {
     
-    Application app(sf::VideoMode(ApplicationManager::SIZE_X, ApplicationManager::SIZE_Y), "Application engine");
+    Application app(sf::VideoMode(ApplicationManager::sizeX, ApplicationManager::sizeY), "Application engine");
     app.Run();
 
 }

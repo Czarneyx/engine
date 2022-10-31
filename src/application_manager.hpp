@@ -13,7 +13,7 @@ public:
     static void Initialize();
 
     static bool pause;
-    static const int SIZE_X = 720;
-    static const int SIZE_Y = 480;
+    static int sizeX;
+    static int sizeY;
 
 };

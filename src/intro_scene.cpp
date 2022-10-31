@@ -3,15 +3,20 @@
 void IntroScene::Start() {
 
     this->quit = false;
+    this->nativeSize = 512;
 
     this->logo.SetTexture("./res/img/logo.png");
-    this->logo.SetPosition(sf::Vector2f(ApplicationManager::SIZE_X/2, ApplicationManager::SIZE_Y/2));
+    this->logo.SetPosition(sf::Vector2f(ApplicationManager::sizeX/2, ApplicationManager::sizeY/2));
+    
+    float logoScale = (ApplicationManager::sizeX * this->nativeSize / 1920.0) / this->logo.GetTexture().getSize().x;
+    
+    this->logo.SetScale(sf::Vector2f(logoScale, logoScale));
 
 }
 
 void IntroScene::Update(float const _dt) {
 
-    // std::cout << "FPS: " << 1/_dt << std::endl;
+    
 
 }
 

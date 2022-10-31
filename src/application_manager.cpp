@@ -1,8 +1,8 @@
 #include "application.hpp"
 
 bool ApplicationManager::pause;
-const int ApplicationManager::SIZE_X; 
-const int ApplicationManager::SIZE_Y; 
+int ApplicationManager::sizeX = 1920*2/3; 
+int ApplicationManager::sizeY = 1080*2/3; 
 
 void ApplicationManager::Initialize() {
 

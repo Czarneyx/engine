@@ -14,7 +14,7 @@ void Application::Initialize() {
 
     this->window = new sf::RenderWindow(this->videoMode, this->windowName, sf::Style::None | sf::Style::Close);
     this->window->setVerticalSyncEnabled(true);
-    this->window->setFramerateLimit(60);
+    // this->window->setFramerateLimit(60);
 
 }
 

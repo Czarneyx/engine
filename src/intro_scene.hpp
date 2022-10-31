@@ -13,4 +13,6 @@ public:
 private:
     Entity logo;
 
+    int nativeSize;
+
 };

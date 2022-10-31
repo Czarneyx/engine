@@ -20,6 +20,18 @@ void Entity::SetPosition(sf::Vector2f const _target) {
         
 }
 
+void Entity::SetScale(sf::Vector2f const _newScale) {
+
+    this->sprite.setScale(_newScale);
+
+}
+
+sf::Texture Entity::GetTexture() {
+
+    return this->texture;
+
+}
+
 void Entity::Render(sf::RenderWindow *_window) {
 
     _window->draw(this->sprite);
