@@ -9,6 +9,7 @@ public:
     void SetPosition(sf::Vector2f const);
     void Render(sf::RenderWindow*);
     void SetScale(sf::Vector2f const);
+    void SetAlpha(float const);
     sf::Texture GetTexture();
 
 private:

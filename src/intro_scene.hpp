@@ -12,7 +12,15 @@ public:
 
 private:
     Entity logo;
+    sf::Clock clock;
 
-    int nativeSize;
+    const float startDelay = 2;
+    const float skipDelay = .87;
+    const float alphaSpeed = 67;
+    const int nativeSize = 512;
+    
+    float alphaValue;
+    bool waitingToSkip;
+    bool fading;
 
 };

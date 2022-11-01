@@ -32,6 +32,14 @@ sf::Texture Entity::GetTexture() {
 
 }
 
+void Entity::SetAlpha(float const _alphaValue) {
+
+    sf::Color spriteColor = this->sprite.getColor();
+    spriteColor.a = _alphaValue;
+    this->sprite.setColor(spriteColor);
+
+}
+
 void Entity::Render(sf::RenderWindow *_window) {
 
     _window->draw(this->sprite);
