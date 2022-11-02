@@ -6,7 +6,7 @@ Application::Application(sf::VideoMode _videoMode, std::string _windowName) {
     this->windowName = _windowName;
 
     this->Initialize();
-    ApplicationManager::Initialize();
+    ApplicationManager::Initialize(this->window);
 
 }
 

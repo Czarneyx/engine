@@ -10,10 +10,12 @@
 class ApplicationManager {
 
 public:
-    static void Initialize();
+    static void Initialize(sf::RenderWindow*);
 
     static bool pause;
     static int sizeX;
     static int sizeY;
+
+    static sf::RenderWindow *window;
 
 };

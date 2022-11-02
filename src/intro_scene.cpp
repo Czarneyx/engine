@@ -14,6 +14,7 @@ void IntroScene::Start() {
     
     this->logo.SetScale(sf::Vector2f(logoScale, logoScale));
     this->logo.SetAlpha(0);
+
     this->clock.restart();
 
 }
@@ -62,7 +63,7 @@ void IntroScene::UpdateEvents(sf::Event const &_event) {
     if(_event.type == sf::Event::KeyPressed)
         if(_event.key.code == sf::Keyboard::Escape) 
             this->quit = true;
-
+            
 }
 
 void IntroScene::Render(sf::RenderWindow *_window) {
