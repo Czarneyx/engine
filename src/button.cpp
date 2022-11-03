@@ -6,7 +6,7 @@ Button::Button() {
 
 }
 
-Button::Button(std::string const _msg, int const _characterSize, sf::Vector2f const _margin, sf::Color const _normalColor, sf::Color const _highlightedColor, sf::Color const _pressedColor) {
+Button::Button(std::string const _msg, int const _characterSize, sf::Vector2f const _margin, sf::Color const _normalColor, sf::Color const _highlightedColor, sf::Color const _pressedColor, std::string _fontPath) {
 
     this->msg = _msg;
     this->characterSize = _characterSize;
@@ -15,17 +15,35 @@ Button::Button(std::string const _msg, int const _characterSize, sf::Vector2f co
     this->highlightedColor = _highlightedColor;
     this->pressedColor = _pressedColor;
 
+    this->LoadFont(_fontPath);
+
     this->Initialization();
 
 }
 
 void Button::Initialization() {
 
-    this->font = sf::Font();
-    this->font.loadFromFile("./res/font/default_font.ttf");
-
     this->text = sf::Text(this->msg, this->font, this->characterSize);
     this->bgRect = sf::RectangleShape(sf::Vector2f(this->text.getGlobalBounds().width + this->margin.x * 2, this->text.getGlobalBounds().height + this->margin.y * 2));
+
+    this->bgRect.setFillColor(this->normalColor);
+
+    this->text.setOrigin(sf::Vector2f(this->text.getGlobalBounds().width / 2, this->text.getGlobalBounds().height / 2));
+    this->bgRect.setOrigin(sf::Vector2f(this->bgRect.getSize().x / 2, this->bgRect.getSize().y / 2));
+
+}
+
+void Button::LoadFont(std::string _fontPath) {
+
+    this->font = sf::Font();
+    this->font.loadFromFile(_fontPath);
+
+}
+
+void Button::SetPosition(sf::Vector2f const _position) {
+
+    this->text.setPosition(_position);
+    this->bgRect.setPosition(_position);
 
 }
 
@@ -52,6 +70,8 @@ void Button::UpdateEvents(sf::Event const &_event ) {
     } 
     else
         this->bgRect.setFillColor(normalColor);
+
+    sf::RectangleShape ori = sf::RectangleShape(sf::Vector2f(5,5));
 
 }
 

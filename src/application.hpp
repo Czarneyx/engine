@@ -1,7 +1,6 @@
 #pragma once 
 
-#include "intro_scene.hpp"
-#include "performance_scene.hpp"
+#include "menu_scene.hpp"
 
 class Application {
 
@@ -29,6 +28,7 @@ private:
     float deltaTime;
 
     IntroScene introScene;
+    MenuScene menuScene;
     PerformanceScene performanceScene;
 
 };

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "scene.hpp"
+#include "performance_scene.hpp"
 
 class IntroScene : public Scene {
 

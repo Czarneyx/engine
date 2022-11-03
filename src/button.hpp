@@ -6,9 +6,11 @@ class Button {
 
 public:
     Button();
-    Button(std::string const, int const, sf::Vector2f const, sf::Color const, sf::Color const, sf::Color const);
+    Button(std::string const, int const, sf::Vector2f const, sf::Color const, sf::Color const, sf::Color const, std::string = ApplicationManager::defaultFontPath);
     void UpdateEvents(sf::Event const&);
     void Render(sf::RenderWindow*);
+    void LoadFont(std::string);
+    void SetPosition(sf::Vector2f const);
     bool IsPressed();
 
 private:

@@ -15,6 +15,7 @@ public:
     static bool pause;
     static int sizeX;
     static int sizeY;
+    static std::string defaultFontPath;
 
     static sf::RenderWindow *window;
 

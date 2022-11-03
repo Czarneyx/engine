@@ -20,10 +20,13 @@ void Application::Initialize() {
 
 void Application::Start() {
 
+    this->AddScene(&this->menuScene);
     this->AddScene(&this->introScene);
     
     this->OverloadGui.push_back(&this->performanceScene);
-    this->performanceScene.Start();
+    
+    for(Scene* scene : this->OverloadGui)
+        scene->Start();
 
 }
 
